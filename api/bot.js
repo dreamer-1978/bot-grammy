@@ -9,7 +9,7 @@ import cheerio from 'cheerio'
 import fs from 'fs'
 import dotenv from "dotenv/config";
 
-
+// https://bot-grammy-m5x2ebvvc-seregas-projects-86df702c.vercel.app/
 const token = process.env.BOT_API_KEY;
 if (!token) throw new Error("BOT_TOKEN is unset");
 const bot = new Bot(token);

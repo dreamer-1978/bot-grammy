@@ -133,4 +133,4 @@ bot.catch((err) => {
 
 // Запуск Бота ...
 export default webhookCallback(bot, "std/http");
-bot.start();
+// bot.start();

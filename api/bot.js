@@ -10,7 +10,7 @@ import fs from 'fs'
 import dotenv from "dotenv/config";
 
 
-// https://api.telegram.org/bot5075619990:AAEyF5W1D_JmFuN6y6BGp2lpxXupKyR0Ays/setWebhook?remove
+
 const token = process.env.BOT_API_KEY;
 if (!token) throw new Error("BOT_TOKEN is unset");
 const bot = new Bot(token);
@@ -108,6 +108,8 @@ bot.command("html", async (ctx) => {
     if (!error && response.statusCode == 200) {
       fs.writeFile('page.html', body, (err) => {
         if (err) throw err
+        const page = document.getElementsByClassName('view')
+        console.log(page)
         console.log('Страница сохранена в формате page.html')
       })
     }
@@ -119,7 +121,7 @@ bot.command("html", async (ctx) => {
 
 // Обработка Ошибки Grammy...
 bot.catch((err) => {
-  const ctx = err.ctx;
+  const ctx = err?.ctx;
   console.error(`Error while handle update ${ctx.update.update_id}`);
   const e = err.err;
   if (e instanceof GrammyError) {
@@ -135,3 +137,4 @@ bot.catch((err) => {
 // Запуск Бота ...
 export default webhookCallback(bot, "std/http");
 
+bot.start()

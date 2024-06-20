@@ -1,0 +1,19 @@
+.container {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 700px;
+    height: 100px;
+    background-color: lightslategray;
+    opacity: 0.5;
+    border-radius: 20px;
+}
+
+.text {
+    /* padding: 25px; */
+}
+.text h2 {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 25px;
+}

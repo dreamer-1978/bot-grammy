@@ -45,13 +45,13 @@ bot.api.setMyCommands([
 ]);
 
 // Клавиатура Custom Keyboard...
-const customKeyboard = new Keyboard()
-  .text("Хорошо")
-  .row()
-  .text("Плохо")
-  .row()
-  .text("Нормально")
-  .oneTime();
+// const customKeyboard = new Keyboard()
+//   .text("Хорошо")
+//   .row()
+//   .text("Плохо")
+//   .row()
+//   .text("Нормально")
+//   .oneTime();
 
 const shareKeyboard = new Keyboard()
   .requestContact("Контакт")
@@ -74,17 +74,17 @@ bot.command("id", async (ctx) => {
 // bot.on(':text', async (ctx) => {
 //     ctx.reply("Надо подумать...");
 // })
-bot.on(":photo", async (ctx) => {
-  ctx.reply("Это фотография");
-});
+// bot.on(":photo", async (ctx) => {
+//   ctx.reply("Это фотография");
+// });
 
-bot.on("::email", async (ctx) => {
-  ctx.reply("Это Email");
-});
+// bot.on("::email", async (ctx) => {
+//   ctx.reply("Это Email");
+// });
 
-bot.hears("serega", async (ctx) => {
-  await ctx.reply("Привет, Серега! ты Супер Кодер...");
-});
+// bot.hears("serega", async (ctx) => {
+//   await ctx.reply("Привет, Серега! ты Супер Кодер...");
+// });
 
 bot.command("keyboard", async (ctx) => {
   await ctx.reply("Как настроение Серега", {
@@ -92,9 +92,9 @@ bot.command("keyboard", async (ctx) => {
   });
 });
 
-bot.hears("Хорошо", (ctx) => {
-  ctx.reply("Здорово что хорошо, рад слышать так держать!!!");
-});
+// bot.hears("Хорошо", (ctx) => {
+//   ctx.reply("Здорово что хорошо, рад слышать так держать!!!");
+// });
 
 bot.command("share", async (ctx) => {
   await ctx.reply("Поделится контактом или геолокации", {
@@ -134,4 +134,4 @@ bot.catch((err) => {
 
 // Запуск Бота ...
 export default webhookCallback(bot, "std/http");
-// bot.start();
+
